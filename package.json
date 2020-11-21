@@ -5,16 +5,20 @@
   "license": "MIT",
   "dependencies": {
     "@4tw/cypress-drag-drop": "^1.4.0",
-    "cypress": "5.5.0"
+    "cypress": "5.5.0",
+    "faker": "^5.1.0"
   },
   "scripts": {
     "test": "./node_modules/.bin/cypress open",
     "cypress:open": "./node_modules/.bin/cypress open",
     "cypress:run": "./node_modules/.bin/cypress run",
+    "cy:verify": "cypress verify",
     "cypress:record": "./node_modules/.bin/cypress run --record --key 8c031909-c110-40d1-a99d-d44cc959a7cb",
+    "e2e:firefox": "cypress run --browser firefox --headless",
     "report": "./node_modules/.bin/cypress run --reporter mochawesome \\ --reporter-options reportDir=reporter-config.json,overwrite=false,html=false,json=true"
   },
   "devDependencies": {
+    "@types/faker": "^5.1.4",
     "cypress-xpath": "^1.6.1",
     "mochawesome": "^6.2.1",
     "mochawesome-merge": "^4.2.0",
