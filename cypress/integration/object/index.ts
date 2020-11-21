@@ -5,7 +5,7 @@ export default class ObjectModule {
   constructor () {
     this.defaultTime = 1000;
     this.selectors = {
-      addObject: '.nav-item button.btn-primary',
+      addObject: '.btn-monospaced.btn-primary',
       popoverContinueCheck: 'input[type="checkbox"]',
       popoverNameInput: '#customObjectNameInput'
     };
@@ -18,12 +18,14 @@ export default class ObjectModule {
   }
 
   createAnObject (name: string, unCheck = false): void {
+    cy.wait(2000);
     const {
       addObject,
       popoverContinueCheck,
       popoverNameInput
     } = this.selectors;
     cy.get(addObject).click();
+
 
     cy.get('.popover.mw-100').within(() => {
       if (unCheck) {
@@ -33,6 +35,8 @@ export default class ObjectModule {
         delay: 20
       });
     });
+
+    cy.wait(3000);
   }
 
   deleteAllObjects (): void {

@@ -8,7 +8,6 @@
     "openMode": 2
   },
   "experimentalNetworkStubbing": true,
-  "experimentalFetchPolyfill": true,
   "reporterOptions": {
     "reportDir": "cypress/results",
     "overwrite": false,

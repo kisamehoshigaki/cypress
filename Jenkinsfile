@@ -2,7 +2,7 @@ pipeline {
   agent {
     // this image provides everything needed to run Cypress
     docker {
-      image 'cypress/browsers:node11.13.0-chrome73'
+      image 'cypress/browsers:node12.16.2-chrome81-ff75'
     }
   }
 
@@ -29,14 +29,14 @@ pipeline {
     //   }
 
       steps {
-        sh "npm run cypress:run"
+        sh "npm run e2e:chrome"
       }
     }
   }
 
     post {
         always {
-            archiveArtifacts artifacts: 'cypress/videos/*', fingerprint: true
+            archiveArtifacts artifacts:  "**/*.mp4", fingerprint: true
         }
     }
 }

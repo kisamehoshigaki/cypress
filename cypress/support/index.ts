@@ -31,15 +31,6 @@ Cypress.Commands.add('login', (username, password) => {
   portal.signIn(username, password);
 });
 
-Cypress.on('window:before:load', win => {
-  fetch('https://unpkg.com/unfetch/dist/unfetch.umd.js')
-    .then(stream => stream.text())
-    .then(response => {
-      win.eval(response);
-      win.fetch = win.unfetch;
-    });
-});
-
 Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from
   // failing the test
