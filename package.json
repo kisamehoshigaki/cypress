@@ -15,6 +15,7 @@
     "cy:verify": "cypress verify",
     "cypress:record": "./node_modules/.bin/cypress run --record --key 8c031909-c110-40d1-a99d-d44cc959a7cb",
     "e2e:firefox": "cypress run --browser firefox --headless",
+    "e2e:chrome": "cypress run --browser chrome --headless",
     "report": "./node_modules/.bin/cypress run --reporter mochawesome \\ --reporter-options reportDir=reporter-config.json,overwrite=false,html=false,json=true"
   },
   "devDependencies": {
