@@ -1,0 +1,24 @@
+{
+  "name": "@monorepo/cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@4tw/cypress-drag-drop": "^1.4.0",
+    "cypress": "5.5.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/cypress open",
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:run": "./node_modules/.bin/cypress run",
+    "cypress:record": "./node_modules/.bin/cypress run --record --key 8c031909-c110-40d1-a99d-d44cc959a7cb",
+    "report": "./node_modules/.bin/cypress run --reporter mochawesome \\ --reporter-options reportDir=reporter-config.json,overwrite=false,html=false,json=true"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^1.6.1",
+    "mochawesome": "^6.2.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0",
+    "typescript": "^4.1.2"
+  }
+}
